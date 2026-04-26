@@ -7,3 +7,25 @@
 // Дополнительно в функции необходимо предусмотреть механизм "защиты от дурака"
 // для работы с некорректными данными (в данном случае функция должна 
 // возвращать значение -1).
+
+#include "logic.h"
+
+int count_nonzero_elements(int array[], int size) {
+	
+	// fool-proof
+	if (size <= 0) {
+		return -1;
+	}
+
+	// logic
+	int count = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+		if (array[i] != 0) {
+			count++;
+		}
+	}
+
+	return count;
+}
