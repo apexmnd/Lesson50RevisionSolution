@@ -11,3 +11,49 @@
 // 
 // Далее необходимо разработать полноценный или тестовый проект для полной 
 // демонстрации работоспособности данной функции.
+
+#include "logic.h"
+
+double count_avg(double array[], int size) {
+	
+	// fool-proof
+	if (size <= 0) {
+		return -1;
+	}
+	
+	// logic
+	double sum = 0;
+		
+	for (int i = 0; i < size; i++)
+	{
+		sum += array[i];
+	}
+
+	double avg = sum / size;
+
+	return avg;
+}
+
+double find_elements(double array[], double size) {
+	
+	double avg = count_avg(array, size);
+
+	// fool-proof
+	if (size <= 0) {
+		return -1;
+	}
+
+	// logic
+	double sum = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+		if (array[i] < avg) {
+			sum += array[i];
+		}
+	}
+
+	sum = abs(sum);
+
+	return sum;
+}
